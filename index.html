@@ -6,6 +6,17 @@
     <script src="javascript.js"></script>
 </head>
 <body>
-  
+  <p>
+    You chose: <span id = "user"></span>
+  </p>
+  <script>
+    document.getElementById("user").innerHTML = getUserChoice();
+  </script>
+  <p>
+    The computer chose: <span id = "choice"></span>
+  </p>
+  <script>
+    document.getElementById("choice").innerHTML = getComputerChoice();
+  </script>
 </body>
 </html>
