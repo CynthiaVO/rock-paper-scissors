@@ -1,36 +1,49 @@
-function getUserChoice() {
-  // ask for player to input selection
-  let playerChoice = "rock";
-  return playerChoice;
-}
 function getComputerChoice() {
-  //randomly assigns the computer choice from either rock, paper or scissors
   //randomly generate 1 of 3 numbers
-  //assign the choice which corresponds to that number to the computer
   var randChoice = Math.floor(Math.random() * (4 - 1)) + 1;
   //assign the computer choice of rock paper scissors based on number
+  //let computerChoice;
+  switch (randChoice) {
+    case 1:
+      computerChoice = "rock";
+      break;
+    case 2:
+      computerChoice = "paper";
+      break;
+    case 3:
+      computerChoice = "scissors";
+      break;
+  } 
   //return the choice
-  let computerChoice;
-  if (randChoice == 1) {
-    computerChoice = "rock";
-    //document.getElementById("computerChoice").innerHTML = "rock";
-  }  
-  else if (randChoice == 2) {
-    computerChoice = "paper";
-    //document.getElementById("computerChoice").innerHTML = "paper";
-  }
-  else {
-    computerChoice = "scissors";
-    //document.getElementById("computerChoice").innerHTML = "scissors";
-  }
-  console.log(computerChoice);
+  //console.log(computerChoice);  
+  document.getElementById("computer").innerHTML = "The computer chose: " + computerChoice;
   return computerChoice;
 }
-let computerChoice = getComputerChoice();
+//now get user choice
+function getUserChoice() {
+  let choice = prompt("Please enter rock, paper or scissors", "no choice");
+  choice = choice.toLowerCase();
+  if (choice != null) {
+    if (choice == "rock" || choice == "paper" || choice == "scissors"){
+      document.getElementById("user").innerHTML = "You chose: " + choice;
+    }
+    else {
+      document.getElementById("user").innerHTML = "I don't recognize that choice! Try again?";
+    }
+  }
+}
 
-//playRound(playerChoice, computerChoice);
-//function playRound(playerSelection, computerSelection) {
-  
-  //compare their selection to the computer selection
+//let computerChoice = getComputerChoice();
+//let userChoice = getUserChoice();
+//playRound(userChoice, computerChoice);
+
+/*playRound(userChoice, computerChoice);
+function playRound(playerSelection, computerSelection) {
+  //if they are the same choice then print "It's a tie!"
+  if (playerSelection == computerSelection) {
+    result = "it's a tie!";
+    console.log(result);
+  }
+  //if they are not the same compare selections to determine winner
   //output winner
-//}
+}*/
