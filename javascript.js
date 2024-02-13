@@ -35,8 +35,11 @@ function getUserChoice() {
 }
 
 function playRound() {
-  document.getElementById("results").innerHTML = "";
   //this function runs on click
+
+  //clear the results field:
+  document.getElementById("results").innerHTML = "";
+  
   //call the functions to provide choices
   let computerChoice = getComputerChoice();
   let userChoice = getUserChoice();
@@ -46,21 +49,33 @@ function playRound() {
     result = "it's a tie! Try again.";
     document.getElementById("results").innerHTML = result;
   }
-  //if they are not the same compare selections to determine winner
+  else {
+    //if they are not the same compare selections to determine winner
   //output winner
   
-  //clear the fields
-  
-}
-//Ulose = "Sorry, you lose. Play again?"
-//Uwin = "You win! Play again?"
+uLose = "Sorry, you lose. Play again?"
+uWin = "You win! Play again?"
 //userChoice equals rock
-  //use a switch, or if else and only look at one case or if rock && paper display Ulose: all the lose statements, then at the end if all false print Uwin.
+  //use a switch, or if else and only look at one case or if rock && paper display Ulose: 
+  //all the lose statements, then at the end if all false print Uwin.
   //computerChoice equals paper, display Ulose
   //computerChoice equals scissors, display Uwin
 //userChoice equals paper
-  //computerChoice equals scissors, display Ulose 
+  //computerChoice equals scissors, display Ulose
   //computerChoice equals rock, display Uwin
 //userChoice equals scissors
   //computerChoice equals rock, display Ulose
   //computerChoice equals paperm, display Uwin
+
+  if ((userChoice == "rock" && computerChoice == "paper")||
+  (userChoice == "paper" && computerChoice == "scissors") || 
+  (userChoice == "scissor") && (computerChoice == "rock")) {
+    document.getElementById("results").innerHTML = uLose;
+  }
+  else {
+    document.getElementById("results").innerHTML = uWin;
+  }
+  }
+ 
+  
+}
