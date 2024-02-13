@@ -36,7 +36,8 @@ function getUserChoice() {
 
 function playRound() {
   //this function runs on click
-
+  //place inside a while loop for 5 rounds
+  //display best out of 5
   //clear the results field:
   document.getElementById("results").innerHTML = "";
   
