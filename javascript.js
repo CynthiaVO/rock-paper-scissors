@@ -21,29 +21,46 @@ function getComputerChoice() {
 }
 //now get user choice
 function getUserChoice() {
-  let choice = prompt("Please enter rock, paper or scissors", "no choice");
-  choice = choice.toLowerCase();
-  if (choice != null) {
-    if (choice == "rock" || choice == "paper" || choice == "scissors"){
-      document.getElementById("user").innerHTML = "You chose: " + choice;
+  let userChoice = prompt("Please enter rock, paper or scissors", "no choice");
+  userChoice = userChoice.toLowerCase();
+  if (userChoice != null) {
+    if (userChoice == "rock" || userChoice == "paper" || userChoice == "scissors"){
+      document.getElementById("user").innerHTML = "You chose: " + userChoice;
     }
     else {
       document.getElementById("user").innerHTML = "I don't recognize that choice! Try again?";
     }
   }
+  return userChoice;
 }
 
-//let computerChoice = getComputerChoice();
-//let userChoice = getUserChoice();
-//playRound(userChoice, computerChoice);
-
-/*playRound(userChoice, computerChoice);
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+  document.getElementById("results").innerHTML = "";
+  //this function runs on click
+  //call the functions to provide choices
+  let computerChoice = getComputerChoice();
+  let userChoice = getUserChoice();
+  
   //if they are the same choice then print "It's a tie!"
-  if (playerSelection == computerSelection) {
-    result = "it's a tie!";
-    console.log(result);
+  if (computerChoice == userChoice) {
+    result = "it's a tie! Try again.";
+    document.getElementById("results").innerHTML = result;
   }
   //if they are not the same compare selections to determine winner
   //output winner
-}*/
+  
+  //clear the fields
+  
+}
+//Ulose = "Sorry, you lose. Play again?"
+//Uwin = "You win! Play again?"
+//userChoice equals rock
+  //use a switch, or if else and only look at one case or if rock && paper display Ulose: all the lose statements, then at the end if all false print Uwin.
+  //computerChoice equals paper, display Ulose
+  //computerChoice equals scissors, display Uwin
+//userChoice equals paper
+  //computerChoice equals scissors, display Ulose 
+  //computerChoice equals rock, display Uwin
+//userChoice equals scissors
+  //computerChoice equals rock, display Ulose
+  //computerChoice equals paperm, display Uwin
